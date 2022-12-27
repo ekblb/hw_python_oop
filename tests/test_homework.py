@@ -9,7 +9,7 @@ try:
 except ModuleNotFoundError:
     assert False, 'Не найден файл с домашней работой `homework.py`'
 except NameError as exc:
-    name = re.findall("name '(\w+)' is not defined", str(exc))[0]
+    name = re.findall("name '(\\w+)' is not defined", str(exc))[0]
     assert False, f'Класс {name} не обнаружен в файле домашней работы.'
 except ImportError:
     assert False, 'Не найден файл с домашней работой `homework.py`'

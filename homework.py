@@ -17,6 +17,7 @@ class InfoMessage:
                     'Потрачено ккал: {calories:.3f}.')
 
     def get_message(self) -> str:
+        """Вернуть информационное сообщение о выполненной тренировке."""
         return self.message.format(**asdict(self))
 
 

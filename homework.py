@@ -147,7 +147,7 @@ def read_package(workout_type: str, data: List[int]) -> Training:
     try:
         return training_classes[workout_type](*data)
     except KeyError:
-        raise KeyError('Неопределенный тип тренировки')
+        raise ValueError(f'Неопределенный тип тренировки {workout_type}')
 
 
 def main(training: Training) -> None:
@@ -158,7 +158,7 @@ def main(training: Training) -> None:
 
 if __name__ == '__main__':
     packages = [
-        ('SWM', [720, 1, 80, 25, 40]),
+        ('SW1', [720, 1, 80, 25, 40]),
         ('RUN', [15000, 1, 75]),
         ('WLK', [9000, 1, 75, 180]),
     ]
